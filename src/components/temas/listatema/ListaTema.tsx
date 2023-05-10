@@ -44,6 +44,7 @@ function ListaTemas() {
 
   return (
     <>
+
       {temas.length === 0 && (
         <div className="loaderContainer">
           <span className="loader"></span>
@@ -73,12 +74,17 @@ function ListaTemas() {
                 Deletar
               </Button>
               </Link>
+              <Link to={`/detalheTema/${tema.id}`}>
+              <Button color="error" variant="contained" size="small">
+                Deletar
+              </Button>
+              </Link>
             </CardActions>
           </Card>
           // </Grid>
         ))}
       </div>
-    </>
+      </>
   );
 }
 

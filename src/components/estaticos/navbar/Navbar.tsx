@@ -2,7 +2,7 @@ import './Navbar.css';
 import { AppBar, Toolbar, Typography } from '@material-ui/core';
 import { Box } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, NavLink } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import { addToken } from '../../../store/tokens/action';
@@ -36,33 +36,33 @@ function Navbar() {
             </Box>
 
             <Box display="flex" justifyContent="start">
-              <Link to="/home">
+              <NavLink to="/home" className={({isActive}) => (isActive ? 'taAtivo' : '')}>
                 <Box mx={1} style={{ cursor: 'pointer' }}>
                   <Typography variant="h6" color="inherit">
                     home
                   </Typography>
                 </Box>
-              </Link>
+              </NavLink>
               <Box mx={1} style={{ cursor: 'pointer' }}>
-                <Link to="/postagens">
+                <NavLink to="/postagens" className={({isActive}) => (isActive ? 'taAtivo' : '')}>
                   <Typography variant="h6" color="inherit">
                     postagens
                   </Typography>
-                </Link>
+                </NavLink>
               </Box>
               <Box mx={1} style={{ cursor: 'pointer' }}>
-                <Link to="/temas">
+                <NavLink className={({isActive}) => (isActive ? 'taAtivo' : '')} to="/temas">
                   <Typography variant="h6" color="inherit">
                     temas
                   </Typography>
-                </Link>
+                </NavLink>
               </Box>
               <Box mx={1} style={{ cursor: 'pointer' }}>
-                <Link to="/cadastrarTema">
+                <NavLink className={({isActive}) => (isActive ? 'taAtivo' : '')} to="/cadastrarTema">
                   <Typography variant="h6" color="inherit">
                     cadastrar tema
                   </Typography>
-                </Link>
+                </NavLink>
               </Box>
               <Box mx={1} onClick={logout} style={{cursor: 'pointer'}}>
                 <Typography variant="h6" color="inherit">

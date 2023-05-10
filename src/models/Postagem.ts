@@ -1,4 +1,5 @@
 import { Tema } from "./Tema";
+import { Usuario } from "./Usuario";
 
 export interface Postagem {
   id: number;
@@ -6,4 +7,5 @@ export interface Postagem {
   texto: string;
   data: string;
   tema?: Tema | null
+  usuario?: Usuario | null
 }

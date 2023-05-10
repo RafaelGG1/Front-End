@@ -22,6 +22,10 @@ function ListaPostagens() {
     (state) => state.token
   )
 
+  const userId = useSelector<TokenState, TokenState["id"]>(
+    (state) => state.id
+  )
+
 
   const [postagens, setPostagens] = useState<Postagem[]>([]);
   const history = useNavigate();
@@ -59,6 +63,9 @@ function ListaPostagens() {
               </Typography>
               <Typography variant="body1" component="p">
                 Tema: {post.tema?.descricao}
+              </Typography>
+              <Typography variant="body1" component="p">
+                Postado por: {post.usuario?.nome}
               </Typography>
               <Typography variant="body1" component="p">
                 {/* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat */}
